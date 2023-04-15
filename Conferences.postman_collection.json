@@ -1,0 +1,1169 @@
+{
+	"info": {
+		"_postman_id": "826fc195-1f76-4bbc-ba3d-723ee6d0e119",
+		"name": "Conferences",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15036247"
+	},
+	"item": [
+		{
+			"name": "Unauthenticated",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"name\",\r\n    \"lastname\": \"surname\",\r\n    \"birthdate\": \"2023-02-09\",\r\n    \"country_name\": \"United Kingdom\",\r\n    \"type\": \"listener\",\r\n    \"phone\": \"+44343533\",\r\n    \"email\": \"sob2@email.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users/register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@groupbwt.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users/login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get conferences",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/conferences",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"conferences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get reports",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/reports",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reports"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Authenticated",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Logout",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/users/logout",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit user",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"name2\",\r\n    \"lastname\": \"surname2\",\r\n    \"birthdate\": \"2023-02-09\",\r\n    \"country_name\": \"United Kingdom\",\r\n    \"type\": \"listener\",\r\n    \"phone\": \"+44343533\",\r\n    \"previousEmail\": \"sob2@email.com\",\r\n    \"email\": \"sob3@email.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/users",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Conferences",
+					"item": [
+						{
+							"name": "Get conference",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/conferences/31",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New conference",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"New conference\",\r\n    \"date\": \"2023-02-12\",\r\n    \"lat\": null,\r\n    \"lng\": null,\r\n    \"start_time\": \"09:00:00\",\r\n    \"end_time\": \"18:00:00\",\r\n    \"country_name\": \"Ukraine\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conferences",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit conference",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"45\",\r\n    \"title\": \"New conference edited\",\r\n    \"date\": \"2023-02-12\",\r\n    \"lat\": null,\r\n    \"lng\": null,\r\n    \"start_time\": \"09:00:00\",\r\n    \"end_time\": \"18:00:00\",\r\n    \"country_name\": \"United Kingdom\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conferences",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete conference",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"45\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conferences",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Join conference",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conferences/join",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences",
+										"join"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel conference",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conferences/cancel",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filter conferneces",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/conferences?reportCount=0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences"
+									],
+									"query": [
+										{
+											"key": "reportCount",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search conferneces",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/conferences/search?title=conference 1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences",
+										"search"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "conference 1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reports",
+					"item": [
+						{
+							"name": "Get reports",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/reports",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get report",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/reports/31",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports",
+										"31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New report",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"New conference\",\r\n    \"date\": \"2023-02-12\",\r\n    \"lat\": null,\r\n    \"lng\": null,\r\n    \"start_time\": \"09:00:00\",\r\n    \"end_time\": \"18:00:00\",\r\n    \"country_name\": \"Ukraine\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/conferences",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"conferences"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit report",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"77\",\r\n    \"topic\": \"New report edited\",\r\n    \"start_time\": \"06:00:00\",\r\n    \"end_time\": \"06:43:00\",\r\n    \"decsription\": null,\r\n    \"presentation\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reports",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete report",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"77\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reports",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add to favorites",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"34\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reports/favorites",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports",
+										"favorites"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove from favorites",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"34\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reports/favorites",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports",
+										"favorites"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get favorites count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/reports/favorites/count",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports",
+										"favorites",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get favorites",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/reports/favorites",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports",
+										"favorites"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filter reports",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/reports?fromTime=13:00&toTime=17:00",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports"
+									],
+									"query": [
+										{
+											"key": "fromTime",
+											"value": "13:00"
+										},
+										{
+											"key": "toTime",
+											"value": "17:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search reports",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/reports/search?topic=report 3",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reports",
+										"search"
+									],
+									"query": [
+										{
+											"key": "topic",
+											"value": "report 3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Presentations",
+					"item": [
+						{
+							"name": "Upload presentation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "presentation",
+											"type": "file",
+											"src": "/G:/Мій диск/Навчання/ДУ ''ЖП''/Бакалаврат/3 курс/Бази даних/БД. Курсовий проєкт/Презентація. Курсовий проєкт. Гордеєв Ростислав(ПІ-60(1)).pptx"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/presentations",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"presentations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove presentation",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"conferenceId\": \"77\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/presentations",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"presentations"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Get comment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/comments/34?offset=0&limit=1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"comments",
+										"34"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\": \"name2\",\r\n    \"lastname\": \"surname2\",\r\n    \"date\": \"2023-02-16T16:06:31\",\r\n    \"text\": \"<h2><em><u>gdsdfsdff</u></em></h2>\",\r\n    \"report_id\": \"34\",\r\n    \"user_id\": \"13\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/comments",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit comment",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"16\",\r\n    \"firstname\": \"name2\",\r\n    \"lastname\": \"surname2\",\r\n    \"date\": \"2023-02-16T16:06:31\",\r\n    \"text\": \"<h2><em><u>gdsdfsdff edited</u></em></h2>\",\r\n    \"report_id\": \"34\",\r\n    \"user_id\": \"13\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/comments",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Get categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/categories",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get category",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/categories/29",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"categories",
+										"29"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Category 2.3\",\r\n    \"parent_id\": 17\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/categories",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit category",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"47\",\r\n    \"name\": \"Category 2.4\",\r\n    \"parent_id\": 17\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/categories",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete category",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"47\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/categories",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
