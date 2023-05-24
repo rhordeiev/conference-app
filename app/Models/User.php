@@ -69,14 +69,6 @@ class User extends Authenticatable
         return self::all()->where('id', $id)->first();
     }
 
-    public static function findUserByCredentials($credentials)
-    {
-        return self::all()->where('email', $credentials['email'])->where(
-            'password',
-            $credentials['password']
-        )->first();
-    }
-
     public static function findUserByEmail($email)
     {
         return self::all()->where('email', $email)->first();
